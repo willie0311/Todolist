@@ -30,6 +30,19 @@ time.innerText = todoY +"/" + todoM +"/" + todoD ;
 todo.appendChild(text);
 todo.appendChild(time);
 
+//第三次KIN的位置
+//打勾
+let completeButton = document.createElement("button");
+completeButton.classList.add("complete");
+completeButton.innerHTML = '<i class = "fas fa-check"></i>' //圖
+//垃圾桶
+let trashButton = document.createElement("button");
+trashButton.classList.add("trash");
+trashButton.innerHTML = '<i class = "fas fa-trash"></i>' //圖
+todo.appendChild(completeButton);  //add 在日期後面的打勾
+todo.appendChild(trashButton); //add 在日期後面的垃圾桶
+//第三次KIN的位置
+
 //再把DIV 塞回去 Section
 section.appendChild(todo);
 });
