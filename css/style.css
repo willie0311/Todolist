@@ -27,4 +27,46 @@ header h1 {
   color: white;
   font-size: 3rem;
 }
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form input, form button {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.75rem;
+  margin: 0.1rem;
+}
+
+form input[type="number"] {
+  width: 100px;
+  text-align: center;
+}
+
+form button {
+  cursor: pointer;
+  background-color: #c957e9;
+  color: white;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 /*# sourceMappingURL=style.css.map */

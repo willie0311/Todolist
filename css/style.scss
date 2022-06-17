@@ -1,3 +1,4 @@
+// 全部都歸零
 *{
     margin: 0;
     padding: 0;
@@ -5,8 +6,9 @@
 }
 
 body{
-    background: linear-gradient(90deg,rgb(10,255,134),rgb(184,130,255));
+    background: linear-gradient(90deg,rgb(10,255,134),rgb(184,130,255));// 漸成顏色
 }
+
 
 header{
     height: 20vh;
@@ -18,3 +20,41 @@ header{
         font-size: 3rem;
     }
 }
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input,button{
+        border: none;
+        padding: 0.25rem 0.5rem;
+        font-size: 1.75rem;
+        margin: 0.1rem;
+    }
+
+    // 型別是數字的input
+    input[type="number"] {
+        width: 100px;
+        text-align: center;
+    }
+    //表單內的按鍵
+    button{
+        cursor: pointer; //手指頭呈現
+        background-color: rgb(201, 87, 233);
+        color: white;
+    }
+}
+//input Y M D 箭頭隱藏
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
