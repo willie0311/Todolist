@@ -109,4 +109,20 @@ section div.todo p.todo-time {
   width: 35%;
   text-align: center;
 }
+
+section div.todo button {
+  padding: 0.25rem 0.5rem;
+  font-size: 1.75rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+section div.todo button.complete {
+  background-color: greenyellow;
+}
+
+section div.todo button.trash {
+  background-color: palevioletred;
+}
 /*# sourceMappingURL=style.css.map */

@@ -85,5 +85,19 @@ section{ //最外層
             width: 35%;//日期的寬
             text-align: center;
         }
+
+        button{
+            padding: 0.25rem 0.5rem;
+            font-size: 1.75rem;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        button.complete{
+            background-color: greenyellow;
+        }
+        button.trash{
+            background-color: palevioletred;
+        }
     }
 }
