@@ -31,16 +31,36 @@ todo.appendChild(text);
 todo.appendChild(time);
 
 //第三次KIN的位置
-//打勾
-let completeButton = document.createElement("button");
+//打勾 
+let completeButton = document.createElement("button"); //按鈕
 completeButton.classList.add("complete");
 completeButton.innerHTML = '<i class = "fas fa-check"></i>' //圖
+
+//打勾按鈕觸發 執行新增Class done 
+completeButton.addEventListener("click" , e => {
+    // console.log(e.target.parentElement)  回上層
+    let todoItem = e.target.parentElement;
+    todoItem.classList.toggle("done");  // add 換成 toggle 切換按鈕
+});
+
 //垃圾桶
 let trashButton = document.createElement("button");
 trashButton.classList.add("trash");
 trashButton.innerHTML = '<i class = "fas fa-trash"></i>' //圖
+
+//垃圾桶按鈕觸發 執行動畫 刪除list
+trashButton.addEventListener("click" , e => {
+    let todoItem= e.target.parentElement;
+    todoItem.addEventListener("animationend" , () =>{
+        todoItem.remove();
+    });
+   todoItem.style.animation = "scaleDown 0.3s forwards";
+});
+
+
 todo.appendChild(completeButton);  //add 在日期後面的打勾
 todo.appendChild(trashButton); //add 在日期後面的垃圾桶
+
 //第三次KIN的位置
 
 //list動畫顯示效果

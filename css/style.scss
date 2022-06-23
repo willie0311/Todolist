@@ -9,6 +9,11 @@ body{
     background: linear-gradient(90deg,rgb(10,255,134),rgb(184,130,255));// 漸成顏色
 }
 
+//獨立寫出button內的i取消功能 因為打勾圖片蓋在上面
+i{
+    pointer-events: none;
+}
+
 
 header{
     height: 20vh;
@@ -70,6 +75,9 @@ section{ //最外層
         align-items: center;
         margin:  0.2rem 0rem;
 
+        //刪除線的動態效果
+        transition: all 0.1s ease;
+
         p{
             background-color: white;//P段落的設置
             color: black;
@@ -100,12 +108,25 @@ section{ //最外層
             background-color: palevioletred;
         }
     }
+    //增加一個新的刪除線 class
+    .done{
+        opacity: 0.5; //顯示半透明
+        text-decoration: line-through;  //刪除線
+        text-decoration-thickness: 0.2rem;  //刪除線粗細
+    }
 }
-//list 動畫顯示效果
+//list 刪除線動畫顯示效果
 @keyframes scaleUp {
     from {
         transform: scale(0);
     }
+    to{
+        transform: scale(1);
+    }
+}
+
+//list 垃圾桶動畫顯示效果
+@keyframes scaleDown {
     to{
         transform: scale(1);
     }

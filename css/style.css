@@ -10,6 +10,10 @@ body {
   background: linear-gradient(90deg, #0aff86, #b882ff);
 }
 
+i {
+  pointer-events: none;
+}
+
 header {
   height: 20vh;
   display: -webkit-box;
@@ -92,6 +96,8 @@ section div.todo {
       -ms-flex-align: center;
           align-items: center;
   margin: 0.2rem 0rem;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 section div.todo p {
@@ -126,6 +132,12 @@ section div.todo button.trash {
   background-color: palevioletred;
 }
 
+section .done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+}
+
 @-webkit-keyframes scaleUp {
   from {
     -webkit-transform: scale(0);
@@ -142,6 +154,20 @@ section div.todo button.trash {
     -webkit-transform: scale(0);
             transform: scale(0);
   }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scaleDown {
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
   to {
     -webkit-transform: scale(1);
             transform: scale(1);
