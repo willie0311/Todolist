@@ -13,6 +13,11 @@ let todoY = form.children[1].value;
 let todoM = form.children[2].value;
 let todoD = form.children[3].value;
 
+//判斷 事件&年&月&日 有無填寫資料 沒有填寫彈出視窗停止 有往下一步
+if(todoText === "" || todoY === "" || todoM === "" || todoD === ""){
+    alert("請輸入事項&年月日");
+    return;
+}
 
 // 創立一個DIV
 let todo = document.createElement('div');
@@ -65,6 +70,13 @@ todo.appendChild(trashButton); //add 在日期後面的垃圾桶
 
 //list動畫顯示效果
 todo.style.animation = "scaleUp 0.3s forwards";
+
+//設定輸入資料後清空欄位的資料
+form.children[0].value = "";  //清除第一個輸入欄位
+form.children[1].value = "";  //清除第二個輸入欄位 年
+form.children[2].value = "";  //清除第三個輸入欄位 月
+form.children[3].value = "";  //清除第四個輸入欄位 日
+
 
 //再把DIV 塞回去 Section
 section.appendChild(todo);
