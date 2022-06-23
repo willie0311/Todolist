@@ -39,8 +39,8 @@ completeButton.innerHTML = '<i class = "fas fa-check"></i>' //圖
 //打勾按鈕觸發 執行新增Class done 
 completeButton.addEventListener("click" , e => {
     // console.log(e.target.parentElement)  回上層
-    let todoItem = e.target.parentElement;
-    todoItem.classList.toggle("done");  // add 換成 toggle 切換按鈕
+    let todoItem = e.target.parentElement;  ////回到上一層div(父層)
+    todoItem.classList.toggle("done");  // add 換成 toggle 切換按鈕 刪除線可以顯示於不顯示
 });
 
 //垃圾桶
@@ -48,13 +48,13 @@ let trashButton = document.createElement("button");
 trashButton.classList.add("trash");
 trashButton.innerHTML = '<i class = "fas fa-trash"></i>' //圖
 
-//垃圾桶按鈕觸發 執行動畫 刪除list
+//垃圾桶按鈕觸發 執行動畫 刪除list 把隱藏的位置直截刪除 remove
 trashButton.addEventListener("click" , e => {
-    let todoItem= e.target.parentElement;
+    let todoItem= e.target.parentElement;  //回到上一層div(父層)
     todoItem.addEventListener("animationend" , () =>{
-        todoItem.remove();
+        todoItem.remove(); //動畫結束後刪除
     });
-   todoItem.style.animation = "scaleDown 0.3s forwards";
+   todoItem.style.animation = "scaleDown 0.3s forwards"; //先讓動畫跑完
 });
 
 
