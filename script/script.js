@@ -77,6 +77,27 @@ form.children[1].value = "";  //清除第二個輸入欄位 年
 form.children[2].value = "";  //清除第三個輸入欄位 月
 form.children[3].value = "";  //清除第四個輸入欄位 日
 
+//創立物件 放到local storage 很重要一環
+let myTodo = {
+    todoText: todoText,
+    todoY : todoY,
+    todoM : todoM,
+    todoD : todoD
+}
+
+//1: 先取得localStorage 再去判斷裡面是否為空值null 再把localStorage轉換成JSON的格式
+let myList = localStorage.getItem("list");
+if (myList == null) {
+    localStorage.setItem("list" , JSON.stringify([myTodo]));
+}else {
+//2: 如果裡面有值 把值轉換成JSON格式
+    let myListArray = JSON.parse(myList);
+    myListArray.push(myTodo); //用push把值放進去陣列內
+    localStorage.setItem("list" , JSON.stringify(myListArray));  //用JSON格式放入
+}
+//在console內看行為
+console.log(JSON.parse(localStorage.getItem("list")));
+
 
 //再把DIV 塞回去 Section
 section.appendChild(todo);
