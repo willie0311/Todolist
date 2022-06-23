@@ -63,6 +63,22 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+//依時間排序 按鈕的樣式
+div.sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0rem;
+
+    button{
+        cursor: pointer;
+        background-color: rgb(222, 95, 167) ;
+        color: white;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        font-size: 1.7rem;
+    }
+}
 
 section{ //最外層
     display: flex;
@@ -115,6 +131,7 @@ section{ //最外層
         text-decoration-thickness: 0.2rem;  //刪除線粗細
     }
 }
+
 //list 刪除線動畫顯示效果
 @keyframes scaleUp {
     from {
