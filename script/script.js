@@ -57,6 +57,20 @@ trashButton.innerHTML = '<i class = "fas fa-trash"></i>' //圖
 trashButton.addEventListener("click" , e => {
     let todoItem= e.target.parentElement;  //回到上一層div(父層)
     todoItem.addEventListener("animationend" , () =>{
+        //刪除local storage 裡面對應資料
+        let text = todoItem.children[0].innerHTML;  //把資料存起來
+            let myListArray = JSON.parse(localStorage.getItem("list")); //抓取local storage資料
+            // 用forEach迴圈去抓陣列資料
+            myListArray.forEach((item, index) => {
+                // 如果資料等於一樣
+                if(item.todoText == text) {
+                    // 用陣列的splice 去對應索引號碼 刪除一筆資料
+                    myListArray.splice(index ,1);
+                    // 再把資料放回去local stoeage內更新
+                    localStorage.setItem("list" , JSON.stringify(myListArray));
+                };
+            });
+
         todoItem.remove(); //動畫結束後刪除
     });
    todoItem.style.animation = "scaleDown 0.3s forwards"; //先讓動畫跑完
@@ -149,6 +163,16 @@ if (myList !== null) {
         trashButton.addEventListener("click" , e => {
             let todoItem= e.target.parentElement;  //回到上一層div(父層)
             todoItem.addEventListener("animationend" , () =>{
+                //刪除local storage 裡面對應資料 跟上面的相同
+                let text = todoItem.children[0].innerHTML;
+                    let myListArray = JSON.parse(localStorage.getItem("list"));
+                    myListArray.forEach((item, index) => {
+                        if(item.todoText == text) {
+                            myListArray.splice(index ,1);
+                            localStorage.setItem("list" , JSON.stringify(myListArray));
+                        };
+                    });
+
                 todoItem.remove(); //動畫結束後刪除
             });
         todoItem.style.animation = "scaleDown 0.3s forwards"; //先讓動畫跑完
