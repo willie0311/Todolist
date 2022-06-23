@@ -101,3 +101,12 @@ section{ //最外層
         }
     }
 }
+//list 動畫顯示效果
+@keyframes scaleUp {
+    from {
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}

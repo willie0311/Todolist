@@ -43,6 +43,9 @@ todo.appendChild(completeButton);  //add 在日期後面的打勾
 todo.appendChild(trashButton); //add 在日期後面的垃圾桶
 //第三次KIN的位置
 
+//list動畫顯示效果
+todo.style.animation = "scaleUp 0.3s forwards";
+
 //再把DIV 塞回去 Section
 section.appendChild(todo);
 });
